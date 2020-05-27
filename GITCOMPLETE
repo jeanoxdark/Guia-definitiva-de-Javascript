@@ -33,5 +33,6 @@ collaborate
    pull       Fetch from and integrate with another repository or a local branch
    push       Update remote refs along with associated objects
 
-   hola cara e bola
-tonto
+   git commit --amend vuelve atras para agregar algo que olvidamos en el mismo commit
+   git checkout -- file vuelve atras y recupera lo que has modificado mal
+   git reset HEAD vuelve atras en el tipo aunque se llama agregado al staging area
