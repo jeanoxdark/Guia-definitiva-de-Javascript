@@ -1,0 +1,1361 @@
+------------------BASIC HTML--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en"> <!--Aqui va todo el codigo ejecutable -->
+<head> <!-- cabecera de la pagina -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>document</title>  <!-- titulo de arriba -->
+	El <base> elemento especifica la URL base y el destino base para todas las URL relativas en una página:
+</head>
+<body> <!-- cuerpo o contenido de la pagina -->
+
+	<a href="https://www.udemy.com"><img src="https://www.udemy.com/staticx/udemy/images/v6/default-meta-image.png" width="200" alt="" ></a> <!--fotos con links clickeables,si le pongo un hashtag solamente es una foto clickeable vacia-->
+
+	<h1 id="top">top of the page</h1> <!--id es un identificador de etiqueta -->
+
+	<a href="about.html">about</a> <!--linkea a otra pestana, otro archivo --> acceskey="" es un shortcut para navegacion mas facil provee un indicio para generar un atajo de teclado para el elemento actual
+
+	<h3>hola que tal</h3> <!-- titulo o subtitulos -->
+
+	<p>image of udemy</p> <!-- parrafo, texto normal -->
+
+	<br> <!-- espacios entre cosas, espaciado-->
+
+	<img src="https://www.udemy.com/staticx/udemy/images/v6/default-meta-image.png" width="600" height="300" alt="identificador de nombre de imagen"> <!-- imagenes, el alt funciona por si la imagen no carga, aparece su nombre -->
+
+	<a href="https://www.udemy.com" target="_blank">visita udemy para mas informacion</a> <!--links, el target _blank sirve para que cuando pise el link abra en otra pestana -->
+
+	<p>Lorem ipsum dolor  <strong>amet,<!--negrita--> consectetur </strong>adipisicing elit. Quisquam facere ullam quidem et excepturi, culpa doloremque. <em>Accusantium architecto</em> <!--Enfasis -->, doloribus ab officiis possimus, sit
+	natus atque dolorem sit illo fuga quae assumenda
+	</p>
+
+	<br>
+
+
+	<p>some text here</p>
+
+	<a href="#top">go back to the top</a> <!--linkea o tiene como referencia el identificador top --> 
+
+	<h1>copyright&copy;</h1>  <!--simbolo de compania anonima, si queremos mas googlear -->
+
+
+
+
+
+	<form action="" method=""> <!--envia los datos a un servidor, backend, en el action se indica el url donde quieres enviar los datos -->
+
+		<label for="name">first name</label> <!--coloca un texto al lado del identificador -->
+		<button type="submit">Submit</button>
+
+
+
+
+
+		<input type="text" name="name" id="name"> <!-- -crea una barrita de texto login, un input.
+
+			El atributo name especifica un nombre para el elemento.
+
+			Este atributo de nombre se puede usar para hacer referencia al elemento en un JavaScript.
+
+			Para los elementos de formulario también se usa como referencia cuando se envían los datos,
+
+			Para el elemento iframe se puede usar para apuntar a un envío de formulario.
+
+			Para el elemento de mapa, el atributo de nombre está asociado con el atributo de mapa de uso de <img> y crea una relación entre la imagen y el mapa.
+
+			Para el metaelemento, el atributo de nombre especifica un nombre para la información / valor del atributo de contenido .
+
+			Para el elemento param, el atributo de nombre se usa junto con el atributo de valor para especificar parámetros para el complemento especificado con la etiqueta <object> .-->
+
+
+		<br>  <!--input type text crea un texto, password igual pero con puntos, email tambien pero para emails,submit un boton -->
+
+
+
+
+
+
+
+		<label for="indoor"> 
+  			<input id="indoor" type="radio" name="indoor-outdoor">Indoor 
+		</label> <!--El for debe tener el mismo nombre que el id del input, esto permite a las tecnologias asistivas crear un link que los relacionen entre el label y el input -->
+		<p>password</p>
+		<input type="password" placeholder="ingrese su correo"> <!--definir el texto  dentro del campo del formulario a modo de ayuda para las visitas -->
+		<br>
+		<input type="email" name="" id="" value="email@examplecom">
+		<br>
+		<p>comentarios</p>
+		<textarea name="" id="" cols="30" rows="10"></textarea> <!--barra de coments -->
+		<br>
+		<p>Pleease select your favorite coding language</p>
+		<input type="radio" name="coding" id="" value="Javascript">Javascript
+		<input type="radio" name="coding" id="" value="Java">Java
+		<input type="radio" name="coding" id="" value="Python">Python <!-- El atributo value es usado para definr el valor enviado por el checkbox, recuerda lo que seleccionaste, controlador de inicio-->
+		<br>
+		<p>Pleease select your favorite coding language</p>
+		<input type="checkbox" name="programming" id="" value="Javascript">Javascript <!--Caja de checks, de palomitas, de biens -->
+		<input type="checkbox" checked name="programming" id="" value="Java">Java <!--Si le pongo checked,sale una checkeada de una -->
+		<input type="checkbox" name="programming" id="" value="python">python 
+		<br>
+		<br>
+		<p>Pleease select your favorite coding language</p>
+		<select name="languages" id=""> <!--barrita desplegable, el option son los datos para seleccionar -->
+			<option value="Javascript">Javascript</option> <!--el value es lo que se manda al server,del submit -->
+			<option value="Java">Java</option> 
+			<option value="Python">Python</option> 
+		</select>
+		<br>
+
+		<br>
+		<input type="submit" value="submit please"> <!--Boton por defecto , value genera texto por defecto (controlador de inicio)-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<ul>	<!--Lista -->
+		<li><a href="#">home</a></li>  <!--lista de links -->
+		<li><a href="about.html">about</a></li>
+		<li><a href="#">contact</a></li>
+		<li>john</li>   
+		<li>peter</li>
+		<li>sara</li>
+	</ul> 	
+
+
+	<ol> <!--lista de numeros --> 
+		<li>john</li>
+		<li>peter</li>
+		<li>sara</li>
+	</ol>
+
+
+	<ul>
+		<li>john</li>
+		<li>peter</li>  <!--ambos anidados --> 
+			<ol>
+				<li>html</li>
+				<li>css</li>
+			</ol>
+		<li>sara</li>
+	</ul>			
+	Usa el <ul>elemento HTML para definir una lista desordenada.
+
+	Utilice list-style-type CSS para definir el marcador de elemento de lista
+
+	disc
+	circle
+	square
+	decimal
+	decimal-leading-zero
+	lower-roman
+	upper-roman
+	lower-greek
+	lower-latin
+	upper-latin
+	armenian
+	georgian
+	lower-alpha
+	upper-alpha
+	none
+
+
+	Usa el <ol> elemento HTML para definir una lista ordenada.
+
+	Utilice el type atributo HTML para definir el tipo de numeración en la etiqueta li.
+
+	Utilice el <li> elemento HTML para definir un elemento de lista
+
+	Usa el <dl> elemento HTML para definir una lista de descripción. (Definicion de lista descriptiva)
+
+	Usa el <dt> elemento HTML para definir el término de descripción. (Titulo de la descripcion)
+
+	Utilice el <dd> elemento HTML para describir el término en una lista de descripción (Elementos de la descripcion)
+
+	Las listas se pueden anidar dentro de listas
+
+	Los elementos de la lista pueden contener otros elementos HTML
+
+	Utilice la propiedad CSS float:left display:inline para mostrar una lista horizontalmente
+
+
+
+
+
+
+
+
+
+
+
+	<table>  <!--tablas --> 
+		<tr> <!-- define una fila de celdas en una tabla.-->
+			<th>some info</th> <!--cabecera de la tabla-->
+			<th>some info</th>
+			<th>some info</th>
+		</tr>
+		<tr>
+			<td>john</td> <!-- define la celda de una tabla que contiene datos -->
+			<td>peter</td>
+			<td>sara</td>
+		</tr>
+	</table>
+
+
+	Utilice el <caption> elemento HTML para definir un título de tabla
+
+	Usa la border propiedad CSS para definir un borde
+
+	Usa la border-collapse propiedad CSS para contraer los bordes de las celdas.
+
+	Use la padding propiedad CSS para agregar relleno a las celdas
+
+	Usa la text-align propiedad CSS para alinear el texto de la celda
+
+	Usa la border-spacing propiedad CSS para establecer el espaciado entre celdas
+
+	Usa el colspan atributo para hacer que una celda abarque muchas columnas
+
+	Usa el rowspan atributo para hacer que una celda abarque muchas filas
+
+	Utilice el id atributo para definir de forma única una tabla
+
+
+
+
+
+	<!--Variables -->
+	--penguin: gray;
+	color: var(--penguin, black); <!--Black sirve por si la variable no sirve sirve para debugging -->
+	background:red;<!--Por si acaso no funciona tampoco -->
+	background: var(--penguin);
+
+
+
+
+
+	<!-- Jerarquia De Modificacion -->
+		etiquetas  <h1>
+		.clases  class=""
+		#id  id=""
+		inline style  style=""
+		!important  color: pink !important;
+
+		:root es una pseudo clase que emparenta el elemento raiz con el documento, usualmente el elemento html. al crear la variable en :root va a poder ser accedida y usada globalmente por todos los elementos del css
+
+		--penguin:white; <!--Puedes modificar individualmente la variable a pesar de que el :root este afectando todo el css -->
+
+
+
+
+
+
+---------RESPONSIVE WEB DESIGN------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+		@media (max-width: 500px) (min-width:) { <!--Los media queries son puntos de corte en el cual en el tamanio especificado por el media sucedera lo que contiene dentro, en este caso el pinguino tendra un tamanio de 600 px hasta que el tamanio de la pantalla supere los 500px como maximo -->
+    :root {
+
+      /* add code below */
+      --penguin-size:600px;
+      --penguin-skin:black;
+      /* add code above */
+
+    }
+  }
+
+  @media (min-width: 700px) and (orientation: landscape); <!--AND -->
+
+  @media (min-width: 700px), handheld and (orientation: landscape) <!--, significa or -->
+  @media not all and (monochrome) <!--Not -->
+
+
+
+  Imagen responsiva
+
+  img {
+    display:block;
+    max-width:100%;
+    height:auto;
+}
+
+para obtener buena resolucion en imagenes con pantallas retina como la del macbookpro se utiliza 250px en width y height
+
+unidades de dimensionado
+px,em,3vh altura de la vista,10vw ancho de la vista,75vmin la dimension mas pequenia de la ventana grafica,80vmax dimension mas grande de la ventana grafica,%
+
+
+La propiedad min-width se usa para determinar la anchura mínima de un elemento. Previene que la propiedad width pueda ser inferior que min-width.
+
+La propiedad max-width se usa para determinar la anchura maxima de un elemento.
+
+
+La propiedad box-sizing puede ser usada para ajustar el siguiente comportamiento:
+
+content-box: es el comportamiento CSS por defecto para el tamaño de la caja (box-sizing). Si se define el ancho de un elemento en 100 pixeles, la caja del contenido del elemento tendrá 100 pixeles de ancho, y el ancho de cualquier borde o relleno ser añadirá al ancho final desplegado.
+
+border-box le dice al navegador tomar en cuenta para cualquier valor que se especifique de borde o de relleno para el ancho o alto de un elemento. Es decir, si se define un elemento con un ancho de 100 pixeles. Esos 100 pixeles incluíran cualquier borde o relleno que se añadan, y la caja de contenido se encogerá para absorber ese ancho extra. Esto típicamente hace mucho más fácil dimensionar elementos.
+
+el padding y border de ese elemento no incrementan su ancho
+
+
+
+
+
+
+La propiedad CSS overflow  especifica: si recortar contenido, dibujar barras de desplazamiento o mostrar el contenido excedente en un elemento a nivel de bloque.
+
+Usando la propiedad overflow con un valor distinto a visible, valor por defecto, creará un nuevo contexto de formatos de bloques. Esto es técnicamente necesario debido a que si un elemento flotante interceptara con otros forzaría a reajustar el contenido alrededor de los elementos que se interceden. El reajuste sucedería luego de cada desplazamiento, y llevaría a un desplazamiento demasiado lento.
+
+visible,hidden,scroll,auto,inherit
+
+
+#main {
+  width: 600px;
+  margin: 0 auto; 
+}
+
+<div id="main">
+
+
+Ajustar la propiedad width de un elemento block-level lo previene de estirarse hasta los bordes de su contenedor a la izquierda y derecha. Después puedes establecer la propiedad margin left y right para que sea auto y centrar de manera horizontal ese elemento en su contenedor. El elemento tomará el ancho que especificaste, después el espacio sobrante será dividido equitativamente entre los dos márgenes.
+
+El único problema ocurre cuando el ancho del navegador es menor que el de tu elemento. El navegador resuelve esto creando una barra de desplazamiento (scrollbar) horizontal en la página. Arreglemos esa situación...
+
+
+
+clear: sirve para despejar elementos que estan sobrepuestos en otros
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+-----------CSS FLEXBOX--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+
+
+	display: block; lo vuelve en bloque
+
+	display: inline; lo vuelve en linea	
+	
+	display:flex; permite manipularlo como flex, se vuelve flexible;
+
+
+	con flex-direction se puede alinear de forma horizontal o vertical el elemento row, column, row-reverse,column-reverse
+
+
+
+
+	justify-content(HORIZONTAL) Alineamiento y espaciamiento sobre la axisa principal(X-axis): center; centra todos los elementos flexbiles en el centro del contenedor flexible
+
+	flex-start: alinea los elementos al inicio del contenedor flexible. Por una fila, esto empuja los artículos a la izquierda del contenedor. Para una columna, esto empuja los elementos a la parte superior del contenedor. Esta es la alineación predeterminada si no justify-contentse especifica ninguna .
+
+	flex-end: alinea los elementos al final del contenedor flexible. Por una fila, esto empuja los artículos a la derecha del contenedor. Para una columna, esto empuja los artículos al fondo del contenedor.
+
+	space-between: alinea los elementos al centro del eje principal, con espacio adicional colocado entre los elementos. El primer y el último artículo se empujan hasta el borde del contenedor flexible. Por ejemplo, en una fila, el primer elemento está contra el lado izquierdo del contenedor, el último elemento está contra el lado derecho del contenedor, luego el espacio restante se distribuye uniformemente entre los otros elementos.
+
+	space-around: similar a space-between pero el primer y el último elemento no están bloqueados en los bordes del contenedor, el espacio se distribuye alrededor de todos los elementos con un espacio medio en cada extremo del contenedor flexible.
+
+	space-evenly: Distribuye el espacio de manera uniforme entre los elementos flexibles con un espacio completo en cada extremo del contenedor flexible
+
+	mas informacion: https://www.w3.org/TR/css-flexbox-1/images/flex-direction-terms.svg
+	height:altura; width:anchura;
+
+
+
+
+
+	align-items(VERTICAL) Alineamiento unicamente sobre la axisa secundaria(Y-axis): es igual que justify-content solo que los alinea en el eje Y. Para una fila, le dice a CSS cómo empujar los elementos en toda la fila hacia arriba o hacia abajo dentro del contenedor. Y para una columna, cómo empujar todos los elementos hacia la izquierda o hacia la derecha dentro del contenedor. Normalmente funciona mas en textos dentro del contenedor flex, literalmente controla al axisa y
+
+	flex-start: alinea los elementos al inicio del contenedor flexible. Para las filas, esto alinea los elementos a la parte superior del contenedor. Para las columnas, esto alinea los elementos a la izquierda del contenedor.
+
+	flex-end: alinea los elementos al final del contenedor flexible. Para las filas, esto alinea los elementos al fondo del contenedor. Para las columnas, esto alinea los elementos a la derecha del contenedor.
+
+	center: alinear elementos al centro. Para las filas, esto alinea verticalmente los elementos (igual espacio encima y debajo de los elementos). Para las columnas, esto los alinea horizontalmente (igual espacio a la izquierda y a la derecha de los elementos)., centra verticalmente el contenido de ese contenedor sin afectar a los demás contenedores que están alrededor
+
+	stretch: estira los artículos para llenar el contenedor flexible. Por ejemplo, los elementos de las filas se estiran para llenar el contenedor flexible de arriba a abajo. Este es el valor predeterminado si no align-items se especifica ningún valor.
+
+	baseline: alinear elementos a sus líneas de base. La línea base es un concepto de texto, piense en ella como la línea en la que se ubican las letras.
+
+	align-content: center; centra verticalmente todos los elementos de ese contenedor
+
+
+
+
+
+	flex-wrap le dice a CSS que ajuste los elementos. Esto significa que los elementos adicionales se mueven a una nueva fila o columna. El punto de ruptura de dónde ocurre el envoltorio depende del tamaño de los artículos y del tamaño del contenedor, sirve para indicarle a elementos que se muevan de linea y no se mantengan en una sola linea,  dividir un elemento flexible en varias filas (o columnas)
+
+	nowrap: esta es la configuración predeterminada y no ajusta los elementos.
+
+	wrap: ajusta los elementos de izquierda a derecha si están en una fila, o de arriba a abajo si están en una columna.
+
+	wrap-reverse: ajusta los elementos de derecha a izquierda si están en una fila, o de abajo hacia arriba si están en una columna.
+
+
+
+
+
+
+	flex-shrink: permite que un artículo se encoja si el contenedor flexible es demasiado pequeño. Los elementos se reducen cuando el ancho del contenedor principal es menor que el ancho combinado de todos los elementos flexibles dentro de él., reduce el tamanio a la mitad del elemento que este definido, ejemplo flex-shrink:1; flex-shrink:3 El segundo se reducira 3 veces comparado a los otros elementos
+
+
+	flex-grow: es lo opuesto a flex-shrink dependiendo del numero aumentara tantas veces el numero indicado, ejemplo flex-grow:1; flex-grow:3 El segundo se expandira 3 veces mas que el otro, ojo que cada uno se coloca en un coso de css diferente
+
+
+
+	flex-basis especifica el tamaño inicial del elemento antes de que CSS realice ajustes con flex-shrink o flex-grow.
+
+	Las unidades usadas por flex-basis son los mismos que otras propiedades de tamaño ( px, em, %, etc.). El valor auto dimensiona los elementos según el contenido
+
+
+
+
+	para hacerlo mucho mas rapido puede usar flex: 1 0 10px;se ajusta el elemento flex-grow: 1;, flex-shrink: 0;y flex-basis: 10px;.
+
+
+
+
+	 Order: se utiliza para indicarle a CSS el orden en que aparecen los elementos flexibles en el contenedor flexible. Por defecto, los elementos aparecerán en el mismo orden en que vienen en el código fuente HTML. La propiedad toma números como valores y se pueden usar números negativos, funciona para intercambiar elementos
+
+
+
+
+	 align-self permite ajustar la alineación de cada elemento individualmente, en lugar de configurarlos todos a la vez, align-self acepta los mismos valores de align-items y anulará cualquier valor establecido por align-items(Center.etc)
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+----------CSS GRID------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+	display: grid; permite manipularlo como grilla
+	todos los elementos se encuentran en un cuadro que se denomina celda
+
+
+	grid-template-columns: 50px 50px coloca columnas a la cuadricula, esto le dará a su cuadrícula dos columnas que tienen cada una 50px de ancho. El número de parámetros dados a grid-template-columns indica el número de columnas en la cuadrícula, y el valor de cada parámetro indica el ancho de cada columna, mueve los objetos y los pone en columna
+
+
+
+	grid-template-rows: 50px 50px coloca filas en la cuadricula, esto le dara dos filas de 50px de ancho, las agrega debajo de los elementos
+
+
+	para cambiar el tamanio de las filas y las columnas puedes utilizar las siguientes unidades:px,em,fr(establece la columna o fila en una fracción del espacio disponible),auto(establece la columna o fila al ancho o alto de su contenido automáticamente),%(ajusta la columna o fila al ancho porcentual de su contenedor).
+
+
+	grid-template-columns: auto 50px 10% 2fr 1fr; Este fragmento crea cinco columnas. La primera columna es tan ancha como su contenido, la segunda columna es de 50 px, la tercera columna es el 10% de su contenedor, y para las dos últimas columnas; el espacio restante se divide en tres secciones, dos se asignan para la cuarta columna y una para la quinta.
+
+
+	repeat: se utiliza para elaborar filas y columnas con muchas cantidades, ejemplo: grid-template-rows: repeat(100, 50px);, esto creara 100 filas de 50px de alto y tambien se puede utilizar grid-template-columns: repeat(2, 1fr 50px) 20px;, esto crear 5 columnas, 2 con 1fr de ancho, 2 con 50px de ancho y 1 sola con 20px de ancho
+	
+	minmax: Se utiliza para limitar el tamaño de los elementos cuando el contenedor de cuadrícula cambia de tamaño, es un media querie que pone limites. Para hacer esto, debe especificar el rango de tamaño aceptable para su artículo. Aquí hay un ejemplo: grid-template-columns: 100px minmax(50px, 200px); crea dos columnas; el primero tiene 100px de ancho y el segundo tiene un ancho mínimo de 50px y un ancho máximo de 200px, repeat(3,minmax(90px,1fr)); crea 3 columnas con los parametros de minmax
+
+	auto-fill: permite insertar automáticamente tantas filas o columnas del tamaño deseado como sea posible, dependiendo del tamaño del contenedor. Puede crear diseños flexibles cuando se combina auto-fill con minmax, de esta manera: grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); esto inserta columnas flexibles mientras este en el rango de minmax
+
+	auto-fit: funciona casi idénticamente a auto-fill. La única diferencia es que cuando el tamaño del contenedor excede el tamaño de todos los artículos combinados, auto-fill sigue insertando filas o columnas vacías y empuja sus artículos hacia un lado, mientras auto-fit contrae esas filas o columnas vacías y estira sus artículos para que se ajusten al tamaño del contenedor, literalmente auto-fit estira la caja del tamanio del contenedor mientras que auto-fill los coloca correctamente
+
+
+
+
+
+
+
+	grid-column-gap: 10px; crea espacios vacios entre cada columna;
+
+
+	grid-row-gap: 10px; crea espacios vacios entre cada fila
+
+
+	grid-gap: 10px 20px; define espacios vacios, la primera defina las filas la segunda las columnas, si tiene un solo valor afecta ambos
+
+
+	grid-column: 1/3; esto indica donde va a iniciar la cuadricula en la columna, empieza en la columna 1 hasta la 3, la grilla es de 3x3, literalmente estira el elemento horizontalmente segun el tamano de la grilla que se especifica 
+
+
+	grid-row: esto indica donde va a inciar la cuadricula en la fila,empieza en la fila 1 hasta la 3, la grilla es de 3x3, literalmente estira el elemento verticalmente
+
+
+
+
+
+
+
+	justify-self(Horizontal): Puede alinear la posición del contenido dentro de su celda horizontalmente en un elemento de cuadrícula. Por defecto, esta propiedad tiene un valor de stretch, lo que hará que el contenido llene todo el ancho de la celda. Esta propiedad CSS Grid también acepta otros valores:
+
+
+	start: alinea el contenido a la izquierda de la celda,
+
+	center: alinea el contenido en el centro de la celda,
+
+	end: alinea el contenido a la derecha de la celda.
+
+
+
+
+	align-self(Vertical):Puede alinear la posicion del contenido dentro de su celda verticalmente en un elemento de cuadricula.
+
+
+
+	start: alinea el contenido a la izquierda de la celda,
+
+	center: alinea el contenido en el centro de la celda,
+
+	end: alinea el contenido a la derecha de la celda.
+
+
+
+
+	justify-items(Horizontal):Puede alinear todos los elementos dentro del contenedor de forma general
+
+
+	align-items(Vertical):Puede alinear todos los elementos dentro del contenedor de forma general
+
+
+
+
+	grid-template-areas: te permite agrupar celdas de la grilla juntas en un "area" y darle al area un nombre personalizado, 								
+	grid-template-areas:
+      "header header header"
+      "advert content content"
+      "footer footer footer";
+
+	con un punto se puede colocar un punto para definir una celda vacia en la grilla, en la parte superior une tres celdas en un area llamada header y en la del centro crea dos areas llamados uno advert y el otro content
+
+
+
+
+	grid-area:despues de crear el grid-template-areas se puede referenciar un objeto por medio de su nombre para que este se ubique en el, ejemplo .item5{grid-area:header}, esto hara que el item5 este ubicado en las areas especificados con el nombre header en este caso cubrira todo la fila superior
+
+	si tu grilla no tiene un grid-template-areas puedes definir sus areas por medio de limites, .item1{grid-area:1/1/2/4}, linea horizontal de inicio, linea vertical de inicio, linea horizontal de fin, linea vertical de fin, se usaran las filas del 1 al 2 y las columnas del 1 al 4
+
+
+
+	
+	se pueden utilizar media queries para hacer grillas responsivas: 
+	@media (min-width: 400px){
+    .container{
+      /* change the code below this line */
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "header header"
+        "advert content"
+        "footer footer";
+
+
+     recuerda que el grid-template-areas define las posiciones por el orden en el que se colocan en el grid-template-areas esto sucede cuando el ancho es mayor a 400px
+
+
+     puedes crear una grilla dentro de otra grilla para hacer esto solo debes aplicar el display y el grid-template-columns dentro de uno de los items del container 
+
+     
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------INTERACCION CON EL USUARIO-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+	
+		The <fieldset> element is used to group related data in a form.
+
+		The <legend> element defines a caption for the <fieldset> element.
+
+
+		The <datalist> element specifies a list of pre-defined options for an <input> element. te dice los elementos que pueden ser correctos
+
+		Users will see a drop-down list of the pre-defined options as they input data.
+
+		The list attribute of the <input> element, must refer to the id attribute of the <datalist> element.
+
+		<input type="button">
+		<input type="checkbox">
+		<input type="color">
+		<input type="date">
+		<input type="datetime-local">
+		<input type="email">
+		<input type="file">
+		<input type="hidden">
+		<input type="image">
+		<input type="month">
+		<input type="number">
+		<input type="password">
+		<input type="radio">
+		<input type="range">
+		<input type="reset">
+		<input type="search">
+		<input type="submit">
+		<input type="tel">
+		<input type="text">
+		<input type="time">
+		<input type="url">
+		<input type="week">
+
+
+		HTML5 added the following attributes for <input>:
+
+		autocomplete
+		autofocus
+		form
+		formaction
+		formenctype
+		formmethod
+		formnovalidate
+		formtarget
+		height and width
+		list
+		min and max
+		multiple
+		pattern (regexp)
+		placeholder
+		required
+		step
+		<br>
+		<!-- <button type="submit">submit</button>  boton de login-->
+
+		<hr> <!--linea de espaciado -->
+
+		<p>The pre tag preserves both spaces and line breaks:</p>
+
+			<pre>
+			   My Bonnie lies over the ocean.
+
+			   My Bonnie lies over the sea.
+
+			   My Bonnie lies over the ocean.
+			   
+			   Oh, bring back my Bonnie to me.
+			</pre> <!--preserva el espaciado de palabras -->
+
+
+
+		Use the style attribute for styling HTML elements
+		Use background-color for background color
+		Use color for text colors
+		Use the HTML <link> element to refer to an external CSS file
+		Use the HTML <head> element to store <style> and <link> elements
+		Use font-family for text fonts
+		Use font-size for text sizes
+		Use text-align for text alignment Justify center right left
+		Use the CSS border property for borders
+		Use the CSS padding property for space inside the border
+		Use the CSS margin property for space outside the border 
+
+
+
+		box-shadow: 20px 10px 3px 10px rgba(0,0,0,0.19); sombras
+		offset-x offset-y borroso-radius redondeado-radius color, in that order
+		opacity: 0.5; borroso o no borroso
+		text-transform: uppercase,lowercase,capitalize,initial,inherit,none; mayuscula minuscula
+		font-weight: 800; grosor de texto
+		line-height:25px; modifica el separado entre palabras de forma vertical
+		text-indent:10px; espaciado entre palabras
+		word-spacing:10px
+		letter-spacing:10px; espaciado entre letras
+		margin:auto; es una forma de centrar elementos en bloque rapidamente, funciona con imagenes pero deben transformarlas a bloque con display:block;
+		margin: 0 auto;
+		background:transparent;
+
+
+
+
+
+		position:relative;
+		top:25px;
+
+		 El elemento es posicionado de acuerdo al flujo normal del documento, y luego es desplazado con relación a sí mismo, con base en los valores de top, right, 
+		 bottom, and left. El desplazamiento no afecta la posición de ningún otro elemento; por lo que, el espacio que se le da al elemento en el esquema de la página es 
+		 el mismo como si la posición fuera static.
+		 Mediante este valor podemos posicionar un elemento respecto al flujo normal de la página. Se podría decir que estamos posicionando un elemento tomando como 
+		 referencia el flujo normal (la posición por defecto) de dicho elemento.
+
+		Podremos usar top, left, right y bottom para posicionar nuestro elemento tomando como referencia la posición por defecto del elemento.
+
+
+
+
+
+
+		position:absolute;
+		bottom:15px;
+
+		Este valor también aceptará los valores top, left, right y bottom. El elemento con position: absolute no estará dentro del flujo normal de la página y tomará como 
+		referencia la ventana del navegador o el elemento posicionado (que tenga cualquier valor de position excepto static) más cercano si es padre del elemento que 
+		queremos posicionar.
+
+
+
+
+
+		position:fixed; |static|sticky
+		top:15px;
+
+		Los elementos a los cuales se les posiciona con position: fixed también están fuera del flujo normal de la página. Sin embargo, no se debe de confundir con los 
+		elementos que están posicionados con position: absolute.
+
+		a diferencia de estos últimos, los elementos con position: fixed toman como referencia la ventana del navegador y no respetan el tener un contenedor padre que 
+		esté posicionado. Además, al hacer scroll en la página, el elemento que esté posicionado como position: fixed seguirá en la misma posición respecto a la ventana 
+		del navegador aunque el scroll haya desplazado la página hacia abajo.
+
+
+
+
+
+		float: left|right, Sirve para flotar o mover un elemento a izquierda o derecha instantaneamente
+
+
+
+
+		z-index: 1 , pueden especificar que elementos aparezcan arriba o abajo en elementos apilados entre si para ordenarlos jerarquicamente, mas informacion https://
+		developer.mozilla.org/es/docs/Web/CSS/z-index
+
+		https://cdn-media-1.freecodecamp.org/imgr/eWWi3gZ.gif link hacia imagen que demuestra el direccionamiento de elementos
+
+
+
+
+
+		background: url(https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png); utiliza una imagen externa para hacer el fondo
+
+
+
+
+
+		transform:scale() duplica el tamanio del elemento tantas veces el numero que se coloque en scale
+		transform:rotate() rota el elemento seleccionado, rotateZ() hace girar el elemento La cantidad de rotacion especificada es indicada por un <angle>. si es positivo sera en sentido de las agujas del reloj, si es negativo al sentido contrario
+
+		transform:translatex,y,z() recoloca un elemento en el eje horizontal y/o vertical
+
+		transform:translateZ() Se posiciona un elemento a lo largo del eje z en el espacio 3D, es decir, más cerca o más lejos del visor.
+
+		transform:perspective(25deg) representa la distancia entre el usuario y el plano z-0. El plano z-0 es el plano donde todo aparece en una vista de 2 dimensiones o en la pantalla. Un valor positivo hace que el elemento aparezca más cerca del usuario que el resto de la interfaz, un valor negativo más lejos. Cuanto mayor sea el valor, más lejos será la perspectiva del usuario
+
+
+
+		p:hover{
+			transform: scale(1.1);
+			transform:rotate();
+		}
+		
+
+
+
+
+		transform:skewX(32deg); inclina en el eje x (Horizontal) con los grado indicado
+		transform:skewY(32deg); inclina en el eje y (Vertical) con los grados indicados
+		
+
+
+
+
+
+
+		pseudo-clases
+
+		:hover aplica el css cuando se coloca el mouse encima de el
+		:active aplica el css cuando se clickea y se mantiene
+		:checked aplica el css cuando un elemento esta marcado (radio, checkbox)
+		:default aplica el css al elemento que este seleccionado por defecto
+		:empty aplica el css en los elementos que no tengan hijos
+		:enabled se aplica el css en cualquier campo habilitado
+		:first se utiliza para imprimir
+		:first-child aplica el css a todos los primeros hijos del elemento padre
+		:fullscreen 
+		:focus aplica el css a el elemento que esta enfocado
+		:indeterminate
+		:in-range
+		:invalid selecciona todos los input con un valor invalido
+		:lang() 
+		:last-child
+		:last-of-type
+		:nth-of-type() selecciona uno o mas elementos segun su posicion dada
+		:left
+		:link se aplica el css cuando un link no ha sido visitado
+		:not() aplica el css a cada elemento que no es el elemento que se coloca entre los parentesis
+		:right
+		:root
+		:scope
+		:target
+		:valid se aplica el css cuando se ha validado satisfactoriamente
+		:visited se aplica el css en enlaces en lo que el usuario ya ha visitado
+
+
+
+
+
+		pseudo-elementos
+
+		::after inserta algo despues de una etiqueta     deben contener la propiedad content: "" o en otro caso agregar una imagen content:url(smiley.gif);
+		::before inserta algo antes de una etiqueta
+		::first-letter selecciona la primera letra de una etiqueta
+		::first-line selecciona la primera linea de una etiqueta
+		::selection selecciona la porcion de elemento que es seleccionada por el usuario
+		::backdrop
+		::placeholder 
+		::marker 
+		::spelling-error 
+		::grammar-error 
+
+		
+
+
+
+		#rect{
+		    animation-name:rainbow; selecciona el nombre de la animacion
+		    animation-duration:4s; duracion de la animacion
+		    animation-timing-function: ease  controla qué tan rápido cambia un elemento animado durante la duración de la animación, tienes ease lento al principio rapido en el medio y se ralentiza al final, ease-out rapida al principio luego se ralentiza, ease-in lenta al principio rapida al final, linear una velocidad constante en todo momento, tambien pudes utilizar cubic-bezier(x1, y1,x2,y2) El eje X de este sistema de coordenadas es la duración de la animación (piense en ella como una escala de tiempo), y el eje Y es el cambio en la animación.
+
+	  	}
+
+	  	@keyframes rainbow{ <!-- keyframes funciona para indicar exactamente que va a ocurrir durante la animacion,se indica por porcentaje el punto de modificacion-->
+	    0%{
+	        background-color:blue;
+	    }
+	    50%{
+	      background-color:green;
+	    }
+	    100%{
+	      background-color:yellow;
+	    }
+	  }
+
+	  button:hover{ efecto de boton animado
+		animation-name: background-color;
+	    animation-duration: 2ms;
+	    animation-fill-mode: forwards; mantiene la animacion activada sin resetearse
+	  }
+	  @keyframes background-color{ los top causan una animacion que baja y sube(movimiento)
+	    0%{
+	      background-color:red;
+	      top:0px;
+	    }
+	    50%{
+	      background-color:green;
+	      top: 50px;
+	    }
+	    100%{
+	      background-color:#4791d0;
+	      top:0px;
+	    }
+	  }
+
+	  }
+
+
+
+	#ball { pelota que se desplaza hacia la derecha con efecto de desaparicion
+	    width: 70px;
+	    height: 70px;
+	    margin: 50px auto;
+	    position: fixed;
+	    left: 20%;
+	    border-radius: 50%;
+	    background: linear-gradient(
+	      35deg,
+	      #ccffff,
+	      #ffcccc
+	    );
+	    animation-name: fade;
+	    animation-duration: 3s;
+	    
+	  }
+
+  @keyframes fade {
+    50% {
+      opacity:0.1;
+      left: 60%;
+
+    }
+  }
+
+
+  #ball { pelota que rebota de arriba a abajo con efecto realista
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+    position: relative;
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-iteration-count: 3; controla cuantas veces se va a repetir la animacion, si quieres que sea infinito coloca infinite
+  }
+
+  @keyframes bounce{
+    0% {
+      top: 0px;
+    }
+    50% {
+      top: 249px;
+      width: 130px;
+      height: 70px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
+
+
+
+
+
+  .back { corazon que late con animacion y fondo que cambia a rosado
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    animation-name: backdiv;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+  }
+
+  .heart {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: pink;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+    animation-name: beat;
+    animation-duration: 1s;
+    animation-iteration-count:infinite;
+
+  }
+  .heart:after {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart:before {
+    background-color: pink;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+
+  @keyframes backdiv {
+    50% {
+      background: #ffe6f2;
+    }
+  }
+
+  @keyframes beat {
+    0% {
+      transform: scale(1) rotate(-45deg);
+    }
+    50% {
+      transform: scale(0.6) rotate(-45deg) ;
+    }
+  }
+
+
+
+
+   .balls { pelotas cayendo desde arriba con diferentes timings
+    border-radius: 50%;
+    background: linear-gradient(
+      35deg,
+      #ccffff,
+      #ffcccc
+    );
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    margin-top: 50px;
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  #ball1 {
+    left:27%;
+    animation-timing-function: linear;
+
+  }
+  #ball2 {
+    left:56%;
+    animation-timing-function:ease-out;
+
+  }
+
+  @keyframes bounce {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: 249px;
+    }
+  }
+
+
+
+.balls { efecto malabares con tres pelotas utilizando cubic-bezier
+    border-radius: 50%;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: 60%;
+    animation-name: jump;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+  #red {
+    background: red;
+    left: 25%;
+    animation-timing-function: linear;
+  }
+  #blue {
+    background: blue;
+    left: 50%;
+    animation-timing-function: ease-out;
+  }
+  #green {
+    background: green;
+    left: 75%;
+    animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+  }
+
+  @keyframes jump {
+    50% {
+      top: 10%;
+    }
+  }
+
+
+		<hr>
+		<hr>
+		<u>Defina texto subrayado
+		<s>Define texto con cara en el centro
+		<del>	Defines le pone una raya en el medio
+		<mark>	Defines lo pone con resaltador
+		<b>	Defines bold text
+		<em>	Defines emphasized text 
+		<i>	Defines italic text
+		<small>	Defines smaller text
+		<strong>	Defines important text
+		<sub>	Defines subscripted text
+		<sup>	Defines superscripted text
+		<h1>Hello im the <sup>1st</sup> in the <sub>town</sub></h1> <!-- sup pone el texto como elevado y sub como en el piso efectos de letra -->
+		<ins>	Defines lo subraya abajo
+		
+
+		<abbr>	Define una Abreviacion o un acronimo
+		<address>	Defines contact information for the author/owner of a document
+		<bdo> 		Define el sentido de la palabra, a que direccion escribe 
+		<blockquote>	define una seccion para hacer palabras importantes de otros
+		<cite>	Define un titulo un poco mas sombreado para poemas o refranes
+		<q>	Defines a short inline quotation
+
+		<!--The target attribute specifies where to open the linked document.
+
+		The target attribute can have one of the following values:
+
+		_blank - Opens the linked document in a new window or tab
+		_self - Opens the linked document in the same window/tab as it was clicked (this is default)
+		_parent - Opens the linked document in the parent frame
+		_top - Opens the linked document in the full body of the window
+		framename - Opens the linked document in a named frame -->
+
+		Use the HTML <map> element to define an image-map imagen donde se puede clickear en varias zonas dentro de ella
+		Use the HTML <area> element to define the clickable areas in the image-map Imagen interactiva,  defina las areas clickeables del mapa de imagenes
+		Use the HTML <img>'s element usemap attribute to point to an image-map
+		Use the HTML <picture> element to show different images for different devices Imagen responsiva
+		<audio controls> Agrega audio
+      <source src="https://s3.amazonaws.com/freecodecamp/screen-reader.mp3" type="audio/mpeg"/>
+    	</audio>
+    	<figure> </figure> se utiliza para definir imagenes y estructurarlas mejor, esta etiquete debe contener una llamada <figcaption> </figcaption> para definir una breve texto
+		<fieldset> </fieldset> se utiliza para englobar radio buttons 
+		<legend></legend> se utiliza para dar una breve descripcion a el grupo, un titulo
+		<div>	Defines a section in a document (block-level) (Se usan para modificar etiquetas en bloque o en linea)
+		<span>	Defines a section in a document (inline) 	  (Divide las etiquetas en bloques o en linea)
+
+		el Class atributo HTML se utiliza para definir estilos iguales para elementos con el mismo nombre de clase.
+
+		Entonces, todos los elementos HTML con el mismo classatributo obtendrán el mismo estilo.
+
+		<iframe src="URL"></iframe> <!--Se utiliza para invocar una pagina dentro de una paginas -->
+
+	</form>
+	<main></main> La etiqueta main define el contenido principal de la pagina web
+	<footer></footer>	La etiqueta <footer> define un pie de página para un documento o sección
+	
+	<aside></aside> <!--define un contenido aparte del contenido en el que se encuentra.
+	El contenido aparte debe estar relacionado con el contenido que lo rodea. --> 
+
+	<article></article>	La etiqueta <article> especifica contenido independiente e independiente.
+Un artículo debe tener sentido por sí mismo y debería ser posible distribuirlo de manera independiente del resto del sitio.4
+
+	<nav></nav>	 La etiqueta <nav> define un conjunto de enlaces de navegación.
+
+	<hgroup></hgroup>
+
+	<section></section> La etiqueta <section> define las secciones de un documento, como capítulos, encabezados, pies de página o cualquier otra sección del documento.
+
+
+	<time datetime=""></time> La etiqueta <time> define una fecha / hora legible por humanos. datetime se utiliza para estandarizar fechas se coloca 2019-05-15
+
+Este elemento también se puede usar para codificar fechas y horas de manera legible por la máquina, de modo que los agentes de usuarios puedan ofrecer agregar recordatorios de cumpleaños o eventos programados al calendario del usuario, y los motores de búsqueda pueden producir resultados de búsqueda más inteligentes.
+
+	<header></header> El elemento <header> representa un contenedor para contenido introductorio o un conjunto de enlaces de navegación.
+	tabindex="0" significa que cuando le de tab mientras navego puedo poner el efecto de :focus y hacerle algun efecto si pulso tab, se puede poner para que sea por orden, 1,2,3,4,5
+
+
+<h1 style="background-color:rgb(255, 99, 71);">rgb(255, 99, 71)</h1>
+
+ rgba(45, 45, 45, 0.1) 0 is solid 1 is transparent
+
+<h1 style="background-color:#ff6347;">#ff6347</h1>
+
+
+hsl(), el tono utiliza un concepto de rueda de color en lugar del espectro, donde el ángulo del color en el círculo se da como un valor entre 0 y 360.
+
+La saturación es la cantidad de gris en un color. Un color completamente saturado no tiene gris, y un color mínimamente saturado es casi completamente gris. Esto se da 
+como un porcentaje con 100% completamente saturado.
+
+La ligereza es la cantidad de blanco o negro en un color. Se da un porcentaje que varía de 0% (negro) a 100% (blanco), donde 50% es el color normal.
+
+<h1 style="background-color:hsl(9, 100%, 64%);">hsl(9, 100%, 64%)</h1>
+
+
+
+El primer argumento especifica la dirección desde la cual comienza la transición de color: puede expresarse como un grado, donde 90deg hace un gradiente vertical y 45deg 
+está en ángulo como una barra diagonal inversa. Los siguientes argumentos especifican el orden de los colores utilizados en el degradado.
+
+Ejemplo:
+
+background: linear-gradient(90deg, red, yellow, rgb(204, 204, 255));
+
+
+
+
+El valor del ángulo es la dirección del gradiente. Las paradas de color son como valores de ancho que marcan dónde tiene lugar una transición, y se dan con un porcentaje 
+o una cantidad de píxeles., son colores repetidos que se mezclan cada ciertos pixeles haciendo efectos de rayado 
+
+
+
+repeat-linear-gradient(
+      45deg,
+      yellow 0px,
+      red 40px,
+      black 40px,
+      blue 80px
+    );
+
+
+
+<p>Same as color name "Tomato", but 50% transparent:</p>
+<h1 style="background-color:rgba(255, 99, 71, 0.5);">rgba(255, 99, 71, 0.5)</h1>
+<h1 style="background-color:hsla(9, 100%, 64%, 0.5);">hsla(9, 100%, 64%, 0.5)</h1>
+
+
+<base>	Defines a default address or a default target for all links on a page
+
+<kbd>   Defines keyboard input 
+<samp>	Defines computer output
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////HTML TAGS/////////////////////////////////////////
+
+104 Etiquetas Html Disponibles
+
+
+<!--...-->	Defines a comment
+<!DOCTYPE> 	Defines the document type
+<a>	Defines a hyperlink
+<abbr>	Defines an abbreviation or an acronym
+<address>	Defines contact information for the author/owner of a document
+<area>	Defines an area inside an image-map
+<article>	Defines an article
+<aside>	Defines content aside from the page content
+<audio>	Defines sound content
+<b>	Defines bold text
+<base>	Specifies the base URL/target for all relative URLs in a document
+<bdi>	Isolates a part of text that might be formatted in a different direction from other text outside it
+<bdo>	Overrides the current text direction
+<blockquote>	Defines a section that is quoted from another source
+<body>	Defines the document's body
+<br>	Defines a single line break
+<button>	Defines a clickable button
+<canvas>	Used to draw graphics, on the fly, via scripting (usually JavaScript)
+<caption>	Defines a table caption
+<cite>	Defines the title of a work
+<code>	Defines a piece of computer code
+<col>	Specifies column properties for each column within a <colgroup> element 
+<colgroup>	Specifies a group of one or more columns in a table for formatting
+<data>	Links the given content with a machine-readable translation
+<datalist>	Specifies a list of pre-defined options for input controls
+<dd>	Defines a description/value of a term in a description list
+<del>	Defines text that has been deleted from a document
+<details>	Defines additional details that the user can view or hide
+<dfn>	Represents the defining instance of a term
+<dialog>	Defines a dialog box or window
+<div>	Defines a section in a document
+<dl>	Defines a description list
+<dt>	Defines a term/name in a description list
+<em>	Defines emphasized text 
+<embed>	Defines a container for an external (non-HTML) application
+<fieldset>	Groups related elements in a form
+<figcaption>	Defines a caption for a <figure> element
+<figure>	Specifies self-contained content
+<footer>	Defines a footer for a document or section
+<form>	Defines an HTML form for user input
+<h1> to <h6>	Defines HTML headings
+<head>	Defines information about the document
+<header>	Defines a header for a document or section
+<hr>	Defines a thematic change in the content
+<html>	Defines the root of an HTML document
+<i>	Defines a part of text in an alternate voice or mood
+<iframe>	Defines an inline frame
+<img>	Defines an image
+<input>	Defines an input control
+<ins>	Defines a text that has been inserted into a document
+<kbd>	Defines keyboard input
+<label>	Defines a label for an <input> element
+<legend>	Defines a caption for a <fieldset> element
+<li>	Defines a list item
+<link>	Defines the relationship between a document and an external resource (most used to link to style sheets)
+<main>	Specifies the main content of a document
+<map>	Defines a client-side image-map
+<mark>	Defines marked/highlighted text
+<meta>	Defines metadata about an HTML document
+<meter>	Defines a scalar measurement within a known range (a gauge)
+<nav>	Defines navigation links
+<noscript>	Defines an alternate content for users that do not support client-side scripts
+<object>	Defines an embedded object
+<ol>	Defines an ordered list
+<optgroup>	Defines a group of related options in a drop-down list
+<option>	Defines an option in a drop-down list
+<output>	Defines the result of a calculation
+<p>	Defines a paragraph
+<param>	Defines a parameter for an object
+<picture>	Defines a container for multiple image resources
+<pre>	Defines preformatted text
+<progress>	Represents the progress of a task
+<q>	Defines a short quotation
+<rp>	Defines what to show in browsers that do not support ruby annotations
+<rt>	Defines an explanation/pronunciation of characters (for East Asian typography)
+<ruby>	Defines a ruby annotation (for East Asian typography)
+<s>	Defines text that is no longer correct
+<samp>	Defines sample output from a computer program
+<script>	Defines a client-side script
+<section>	Defines a section in a document
+<select>	Defines a drop-down list
+<small>	Defines smaller text
+<source>	Defines multiple media resources for media elements (<video> and <audio>)
+<span>	Defines a section in a document
+<strong>	Defines important text
+<style>	Defines style information for a document
+<sub>	Defines subscripted text
+<summary>	Defines a visible heading for a <details> element
+<sup>	Defines superscripted text
+<svg>	Defines a container for SVG graphics
+<table>	Defines a table
+<tbody>	Groups the body content in a table
+<td>	Defines a cell in a table
+<template>	Defines a template
+<textarea>	Defines a multiline input control (text area)
+<tfoot>	Groups the footer content in a table
+<th>	Defines a header cell in a table
+<thead>	Groups the header content in a table
+<time>	Defines a date/time
+<title>	Defines a title for the document
+<tr>	Defines a row in a table
+<track>	Defines text tracks for media elements (<video> and <audio>)
+<u>		Defines text that should be stylistically different from normal text
+<ul>	Defines an unordered list
+<var>	Defines a variable
+<video>	Defines a video or movie
+<wbr>	Defines a possible line-break
+
+
