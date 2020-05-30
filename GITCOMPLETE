@@ -103,6 +103,8 @@ collaborate
    git config --global alias.lodag 'log --oneline --decorate --all --graph '
 
    git config --global alias.unstage 'reset HEAD --'
+
+   
    git config --global --get-regexp alias
 
    git config --global --unset alias.lodag
