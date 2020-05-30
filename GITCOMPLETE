@@ -96,6 +96,6 @@ collaborate
    git checkout master
    git merge fix-textosuperior
    git merge feature-commercialtext
-   //si modificas 2 lineas diferentes en diferentes branch y les haces merge va a dar conflicto
+   //si modificas 2 lineas diferentes en diferentes branch y les haces merge va a dar conflic
 
 
