@@ -38,7 +38,7 @@ collaborate
 
    git checkout -- file vuelve atras y recupera lo que has modificado mal
 
-   git reset HEAD vuelve atras en el tipo aunque se llama agregado al staging area //deshacer un commit
+   git reset HEAD vuelve atras en el tipo aunque se llama agregado al staging area //deshacer un commit, lo desmonta de el stagin area
    git reset F588DE // borra un commit pero lo devuelve al stage
    git reset --hard F588DE // borra el commit completamente
    git reset --soft F588DE //borra el commit pero lo devuelve al stage ya agregado
@@ -98,4 +98,12 @@ collaborate
    git merge feature-commercialtext
    //si modificas 2 lineas diferentes en diferentes branch y les haces merge va a dar conflicto
 
+   // git alias
+
+   git config --global alias.lodag 'log --oneline --decorate --all --graph '
+
+   git config --global alias.unstage 'reset HEAD --'
+   git config --global --get-regexp alias
+
+   git config --global --unset alias.lodag
 
