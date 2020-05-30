@@ -104,8 +104,8 @@ collaborate
 
    git config --global alias.unstage 'reset HEAD --'
 
-   
+   //Lista de tags creados
    git config --global --get-regexp alias
-
+   //borrar un tag
    git config --global --unset alias.lodag
 
