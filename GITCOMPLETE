@@ -33,6 +33,69 @@ collaborate
    pull       Fetch from and integrate with another repository or a local branch
    push       Update remote refs along with associated objects
 
+   git add . // pone todos los cambios en el stage
    git commit --amend vuelve atras para agregar algo que olvidamos en el mismo commit
+
    git checkout -- file vuelve atras y recupera lo que has modificado mal
-   git reset HEAD vuelve atras en el tipo aunque se llama agregado al staging area
+
+   git reset HEAD vuelve atras en el tipo aunque se llama agregado al staging area //deshacer un commit
+   git reset F588DE // borra un commit pero lo devuelve al stage
+   git reset --hard F588DE // borra el commit completamente
+   git reset --soft F588DE //borra el commit pero lo devuelve al stage ya agregado
+
+
+   ///REVERTIR COMMITS///
+   git diff F588DE T5D78 //DIFERENCIAS ENTRE CADA COMMIT
+   git diff HEAD~1 HEAD // es lo mismo que arriba
+   git revert HEAD // revierte la cabecera
+   git revert HEAD~1 //REVIERTE EL ANTERIOR A LA CABECERA
+   git revert --no-commit HEAD //revierte los cambios pero dejalos en el stage 
+   git revert --continue // termina de revertir
+
+
+
+   //BRANCHS////
+   git log --oneline --graph --decorate // muestra la relacion entre los commits 
+
+   git branch // muestra las ramas que tenemos creadas
+
+   git branch feature-newstyle // crea un nuevo branch
+
+   git checkout feature-newstyle // cambia de rama
+
+   git ckeckout -b feature-newhomepage // crea y se cambia de rama
+
+   git branch -m feature-newhomepage feature-newhome // cambia el nombre de una rama
+
+   git branch -d feature-newhome // borra un branch
+
+
+   //commit en un branch feature//////
+
+   git add.
+   git commit
+   git log --oneline --decorate --all --graph
+   git checkout master
+   git checkout -b fix-fecha
+   git add index
+   git commit
+
+   //Integrar los branches a master
+
+   git checkout master
+   git merge fix-fecha
+   git merge feature-newstyle
+
+   //conflictos en merge
+
+   git checkout -b feature-comercialtext
+   git add index
+   git commit
+   git checkout master
+   git checkout -b fix-textosuperior
+   git checkout master
+   git merge fix-textosuperior
+   git merge feature-commercialtext
+   //si modificas 2 lineas diferentes en diferentes branch y les haces merge va a dar conflicto
+
+
