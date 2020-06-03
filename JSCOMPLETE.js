@@ -425,8 +425,7 @@ dogs.[Symbol.species](); //
 
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+///////////////////////////////////////////////////////CALLBACKS/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 //Funciones de Orden Superior, Son funciones que se envian como parametros a otra funcion(callbacks)
@@ -461,6 +460,28 @@ function procesarEntradaUsuario(callback) {
 }
 
 procesarEntradaUsuario(saludar);
+
+
+let suma = (a,b) => console.log(`el resultado de la suma es ${a+b}`);
+
+suma(Number(prompt('ingresa un valor')),Number(prompt('ingresa otro valor')));
+
+
+
+
+
+	const sayName = (name,cb) => {  //callback asincrono
+		console.log('running some code');
+		console.log(`My name is ${name}`);
+		cb();
+	}
+
+	function callback(){
+		console.log('devuelve algo');
+	}
+
+	sayName('MARCOS', callback );
+
 
 
 
@@ -527,6 +548,8 @@ let c = function (precio) {
 }
 
 let precioTotal = c(23.34);
+
+
 
 
 
@@ -691,7 +714,7 @@ map(),sort(),reduce(),fill(),filter() // Funciones del objeto aray de orden supe
 
 
 
-//Funcion generadora
+//////////////////////////////////////////////////////////////////////////FUNCION GENERADORA/////////////////////////////////////////////////////////////
 
 function*Hola(){
 	yield 1; // pausa y resume la funcion
@@ -721,7 +744,8 @@ console.log(it.next());   // throws StopIteration (as the generator is now close
 readline();
 
 
-//Asignamiento destructurado(Deestructuracion)
+///////////////////////////////////////////ASGINAMIENTO DESTRUCTURADO(Deestructuracion)///////////////////////////////////////////////////////
+
 var a, b, rest;
 [a, b] = [10, 20];
 console.log(a); // 10
@@ -748,7 +772,9 @@ const [first, second] = input.map(s => s.split(""))
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-//Spread Syntax
+
+
+//////////////////////////////////////////////////////////SPREAD SYNTAX///////////////////////////////////////////////////////////////
 
 function myFunction(x, y, z) {return x+y+z }
 var args = [0, 1, 2];
@@ -808,10 +834,7 @@ cinco("enero","febrero","marzo","abril");
 
 
 
-
-
-
-//Scope de Funciones
+////////////////////////////////////////////////////////////////SCOPE DE FUNCIONES////////////////////////////////////////////////////////////////////////////////
 
 // La forma para que una funcion interna coloque su valor dentro y luego en el externo debemos colocar unos parentesis al final, ejemplo: el return canal entra en la function() y luego la function() retorna a la variable obtener y imprime hola.
 
@@ -858,7 +881,9 @@ console.log(outside(3)(5));
 
 
 
-//Operador de Cortocircuito
+//////////////////////////////////////////////////////OPERADOR DE CORTOCIRCUITO//////////////////////////////////////////////////////////////////
+
+
 //Si da true imprime lo de la izquierda con el operador ||, si da false imprime lo de la derecha // imprime los true
 //Si da false imprime lo de la izquierda con el operador &&, si da true imprime lo de la derecha//Imprime los false
 function a(a){
@@ -947,7 +972,7 @@ otraPersona.saludar(); // Hola window
 
 
 
-////////////////////////////////Arrow Functions/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////ARROW FUNCTIONS/////////////////////////////////////////////////////////////////////////////////
 
 
 var animal = nombre => `hola ${nombre}`;
@@ -1060,7 +1085,9 @@ fetch('http://example.com/movies.json') // Devuelve la promesa del API con la re
   .then(myJson => console.log(myJson)); // Ese json retornado se imprime por console.log
   .catch(error => console.log(error)) // si el Api esta malo, pasa por catch y imprime el error
 
+
 ///////////////////////////////////////////////////////////////FETCH/////////////////////////////////////////////////////////////////////////
+
 
 
 //Fetch sirve para realizar solicitudes de un url,traer dato de un url
@@ -1075,10 +1102,39 @@ fetch(wordnikAPI) // Empiezo con fetch, que devuelve una promesa del API wordnik
 		createP(json.word)) // Agarra el Json que acabas de transformar y crea un elemento <p>, ya puedo acceder a las propiedades pq es json
 		return fetch(giphyAPI + json.word);	//y retorno otro fetch para agregar mas datos pero ahora a giphyAPI sumado a un propiedad de word
 	})
-
 	.then(respuesta => respuesta.json()); // Si el promise de giphy esta correcto, retorno el json de ese promise
 	.then(json => createImg(json.data[0].images['fixed_height_small'].url) // agarro el json de giphy y creo una imagen 
 	.catch(error => console.log(error)) // si el Api esta malo, pasa por catch y devuelve el error
+
+
+
+
+
+
+
+
+//usa p5.js
+wordGIF().
+then(results => {
+	createP(results.word);
+	createImg(results.img);
+}).
+catch(err => console.log(error));
+
+
+
+async function wordGIF() {
+	let response1 = await fetch(wordnikAPI);
+	let json1 = await response.json();
+	let response2 = await fetch(giphyAPI + json1.word);
+	let json2 = await response2.json();
+	let img_url = json2.data[0].images['fixed_height_small'].url
+	return{
+		word: json1.word,
+		img:img_url
+	}
+}
+
 
 
 
@@ -1102,25 +1158,10 @@ fetch(url, {
 
 
 
-/////////////////////////////////////////////COMO HACER UNA PROMESA////////////////////////////////////////////////////////////////////////
-
-
-function delay(time){
-	return new Promise((resolve,reject) => {
-		if(isNaN(time)){
-			reject(new Error('delay is not a valid number'))
-		}
-		setTimeout(resolve,time)
-	});
-}
-
-delay(1000)
-  .then(() => console.log("perfecto"))
-  .catch((err) => console.error(err));
 
 
 
-
+  
 
 
 
@@ -1129,8 +1170,57 @@ delay(1000)
 
 /////////////////////////////////////////////////ASYNC-AWAIT/////////////////////////////////////////////////////////////////////////////////
 
+//revise un parametro, crea una promesa,si no es un numero rechaza la promesa y lanza un error, si es un numero llama a set timeout y resuelve el promise con lo que tenga then
+//lo que tenga then es lo que hace si el promise pasa correctamente por resolve, si no va a catch por el reject
+///////////////////////como hacer una promesa//////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+delay(1000)
+  .then(() => console.log("perfecto"))
+  .catch((err) => console.error(err));
 
 
+function delay(time){
+	return new Promise((resolve,reject) => {
+		if(isNaN(time)){
+			reject(new Error('delay is not a valid number')) // cuando toca el reject deberia ya cortarse la ejecucion 
+		} else {
+			setTimeout(resolve,time) // manda el resolve dentro del set timeout para que no imprima nada directamente
+		}
+	});
+}
+
+async function a(time){
+	let a = await delay(time);
+	return a;
+}
+
+
+a(1000)
+.then(() => console.log("perfecto"))
+.catch(err => console.log(err));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//await significa solo espera por la promesa a resolver
+//async indica que la funcion va a retornar un promise, en vez de decir return new promise ya el async lo hace
+delayES8(1000)
+  .then(() => console.log("perfecto"))
+  .catch((err) => console.error(err));
+
+
+
+async function delayES8(time){
+	await delay(time) // supongamos que delay es parte de alguna libreria js que devuelve un promise
+	await somethingElse();
+	let val = await somethingElseElse();
+	await somethingElseElseElse();
+	return val;
+  }
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 async function getData(){
 	let promise = new Promise((resolve,reject) => {
@@ -1138,36 +1228,127 @@ async function getData(){
 	});
 
 	let result = await promise;
-	console.log(result);
+	console.log(result); //done
 }
 
 getData();
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
-let suma = (a,b) => console.log(`el resultado de la suma es ${a+b}`);
-
-suma(Number(prompt('ingresa un valor')),Number(prompt('ingresa otro valor')));
-
-
-
-
-
-
+function resolveAfter2Seconds(x) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(x);
+    }, 2000);
+  });
+}
 
 
-	const sayName = (name,cb) => {  //callback asincrono
-		console.log('running some code');
-		console.log(`My name is ${name}`);
-		cb();
+async function add1(x) {
+  const a = await resolveAfter2Seconds(20);
+  const b = await resolveAfter2Seconds(30);
+  return x + a + b;
+}
+
+add1(10).then(v => {
+  console.log(v);  // prints 60 after 4 seconds.
+});
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+function resolveAfter2Seconds() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
+}
+
+async function asyncCall() {
+  console.log('calling');
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+  // expected output: 'resolved'
+}
+
+asyncCall();
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+function coger(x){
+	return new Promise((resolve,reject) => {
+		if(typeof x == "number"){
+			setTimeout(() => resolve(x),3000);
+		} else if(typeof x == "string"){
+			setTimeout(() => reject(new Error("No puede ser String")),3000);
+		}
+	})
+}
+
+async function detectar(){
+	let num = prompt("coloca n si es numero,y s si es string");
+	if(num == "n"){
+		let x = parseInt(prompt("indique el numero"))
+		let analisis = await coger(x);
+		return analisis;
+	} else{
+		let x = prompt("indique el string")
+		let analisis = await coger(x);
+		return analisis;
 	}
+}
 
-	function callback(){
-		console.log('devuelve algo');
+detectar()
+.then(v => console.log(`Tu numero ha sido obtenido de la base de datos exitosamente, tu numero es ${v}`))
+.catch(err => console.log(err));
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Hecho con promises
+
+function requestHandler(req,res){
+	User.findById(req.userId)
+	.then(user => Tasks.findById(user.tasksId))
+	.then(tasks => {
+		tasks.completed = true;
+		return tasks.save();
+	})
+	.then(() => res.send("tasks completed"))
+	.catch(err => res.send(err));
+}
+
+//se usa await con metodos que tengan calbacks o que sean traidas de la base de datos
+//hecho con async await
+
+async function requestHandler(req,res){
+	try{
+		const user = await User.findById(req,userId);
+		const tasks = await Tasks.findById(user.tasksId);
+		tasks.completed = true;
+		await tasks.save();
+		res.send("task completed");
 	}
+	catch(e){
+		res.send(e);
+	}
+}
 
-	sayName('MARCOS', callback );
+
+
+
+
 
 
 
@@ -1227,11 +1408,139 @@ function hello(){
 
 //////////////////////////////////////////////PROMISE.ALL Y PROMISE.RACE/////////////////////////////////////////////////////////////////
 
+//async await de forma paralela, que pasa si quiere retener la secuencia de cada una de las llamadas 
+
+wordGIF(4).
+then(results => {
+	createP(results.word);
+	createImg(results.img);
+	return wordGIF(5);
+}).
+then(results => {
+	createP(results.word);
+	createImg(results.img);
+}).
+catch(err => console.log(error));
 
 
 
 
 
+
+
+
+//en vez de poner todo feo asi paralelo usamos promise.all
+wordGIF(4).
+then(results => {
+	createP(results.word);
+	createImg(results.img);
+	return wordGIF(5);
+}).
+catch(err => console.log(error));
+
+wordGIF(5).
+then(results => {
+	createP(results.word);
+	createImg(results.img);
+	return wordGIF(5);
+}).
+catch(err => console.log(error));
+
+wordGIF(6).
+then(results => {
+	createP(results.word);
+	createImg(results.img);
+	return wordGIF(5);
+}).
+catch(err => console.log(error));
+
+
+
+//Promise.all necesita un array
+//si yo creo un array de 3 promises cuando todos los promises esten listos, dame todos los resultados dentro del array en el mismo orden que se invocaron los promises originales
+let promises = [wordGIF(3),wordGIF(4),wordGIF(5)]; // QUIERO HACER 3 PROMISES CUANDO TODOS ESTEN LISTOS MUESTRAME EL RESULTADO
+Promise.all(promises).
+  then(result => {
+	for(let i = 0; i < result.length; i++){ // estoy poniendo todos los promises dentro de un array
+		createP(result[i].word);
+		createImg(result[i].img);
+	}
+  }).
+catch(err => console.log(err));
+
+
+
+
+//Promise.all necesita un array
+//si yo creo un array de 3 promises cuando todos los promises esten listos, dame todos los resultados dentro del array en el mismo orden que se invocaron los promises originales
+let promises = []; // QUIERO HACER 3 PROMISES CUANDO TODOS ESTEN LISTOS MUESTRAME EL RESULTADO
+for(let i = 0;i < 100; i++){
+	promises.push(wordGIF(4));
+}
+Promise.all(promises).
+  then(result => {
+	for(let i = 0; i < result.length; i++){ // estoy poniendo todos los promises dentro de un array
+		createP(result[i].word);
+		createImg(result[i].img);
+	}
+  }).
+catch(err => console.log(err));
+
+
+
+
+
+
+async function wordGIF(num) { // el numero de letras que quiero
+	let response1 = await fetch(wordnikAPI + '&minLength ='+num+'&maxLength='+num); // estoy modificando el link de wordnik para especificar el maximo de caracteres por la variable
+	let json1 = await response.json();
+	let response2 = await fetch(giphyAPI + json1.word);
+	let json2 = await response2.json();
+	let img_url = json2.data[0].images['fixed_height_small'].url
+	return{
+		word: json1.word,
+		img:img_url
+	}
+}
+
+
+
+
+///////////////TRY-CATCH///////////////////////////////////////
+
+let promises = []; // QUIERO HACER 3 PROMISES CUANDO TODOS ESTEN LISTOS MUESTRAME EL RESULTADO
+for(let i = 0; i < 100; i++){
+	promises.push(wordGIF(i));
+}
+Promise.all(promises).
+  then(result => {
+	for(let i = 0; i < result.length; i++){ // estoy poniendo todos los promises dentro de un array
+		createP(result[i].word);
+		if(result[i].img !== null){
+			createImg(result[i].img);
+		}
+	}
+  }).
+catch(err => console.log(err));
+
+
+async function wordGIF(num) { // el numero de letras que quiero
+	let response1 = await fetch(wordnikAPI + '&minLength ='+num+'&maxLength='+num); // estoy modificando el link de wordnik para especificar el maximo de caracteres por la variable
+	let json1 = await response.json();
+	let response2 = await fetch(giphyAPI + json1.word);
+	let json2 = await response2.json();
+	let img_url = null;
+	try{
+		img_url = json2.data[0].images['fixed_height_small'].url;
+	} catch(e){
+		console.log('no image found for' + json1.word);
+		console.error(e);
+	}
+	return{
+		word: json1.word,
+		img:img_url
+	}
+}
 
 
 
