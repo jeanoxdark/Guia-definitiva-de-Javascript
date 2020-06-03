@@ -1,0 +1,347 @@
+start a working area
+   clone      Clona un repositorio en un nuevo directorio
+   init       Crea un repositorio git vacio o reinicializa un repositorio existente
+
+
+work on the current change 
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+
+examine the history and state 
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout    Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+
+collaborate 
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+
+
+   git mv princ.html principal.html //cambia el nombre de el archivo
+
+   git rm prince.html desmonta el stage
+
+   git add *.txt // agrega todos los txt del proyecto
+
+   git add -A //agrega todos los archivos modificados
+
+   git add pdfs/ //agrega todos los archivos dentro de esa carpeta
+
+   git add . // pone todos los cambios en el stage
+   git add -u // actualiza todo, mas que todo cuando se borra
+
+   git commit --amend -m vuelve atras para agregar algo que olvidamos en el mismo commit
+
+   git commit -am ¨hola que tal¨//add y commit junto
+
+   git status -s // silenciado a solo los modificados
+
+   git status -s -b //indica la rama actual
+
+   git diff --staged // saca los diff de lo que esta en el stage ya
+
+   //DESHACER MODIFICACION
+   git checkout -- file vuelve atras y recupera lo que has modificado mal
+
+
+   //BORRAR COMMITS
+   git reset HEAD vuelve atras en el tipo aunque se llama agregado al staging area //deshacer un commit, lo desmonta de el stagin area
+   git reset F588DE // borra un commit pero lo devuelve al stage, cambia de lugar borrando lo que estaba arriba
+   git reset --hard F588DE // borra todos los commit que se desanclaron definitvamente
+   git reset --soft F588DE //borra el commit pero lo devuelve al stage ya agregado
+   git reset --mixed F588DE // le hace unstage a todos los que estan antes de ese y los borra entre comillas
+
+
+   ///REVERTIR COMMITS///
+   git diff F588DE T5D78 //DIFERENCIAS ENTRE CADA COMMIT
+   git diff HEAD~1 HEAD // es lo mismo que arriba
+   git revert HEAD // revierte la cabecera
+   git revert HEAD~1 //REVIERTE EL ANTERIOR A LA CABECERA
+   git revert --no-commit HEAD //revierte los cambios pero dejalos en el stage 
+   git revert --continue // termina de revertir
+
+
+
+   //BRANCHS////
+
+   reflog // todos los commits hasta los borrados
+
+   git log --oneline --graph --decorate // muestra la relacion entre los commits 
+
+   git branch // muestra las ramas que tenemos creadas
+
+   git branch feature-newstyle // crea un nuevo branch
+
+   git checkout feature-newstyle // cambia de rama
+
+   git ckeckout -b feature-newhomepage // crea y se cambia de rama
+
+   git branch -m feature-newhomepage feature-newhome // cambia el nombre de una rama
+
+   git branch -d feature-newhome // borra un branch
+
+
+   //COMMIT EN UN BRANCH FEATURE//////
+
+   git add.
+   git commit
+   git log --oneline --decorate --all --graph
+   git checkout master
+   git checkout -b fix-fecha
+   git add index
+   git commit
+
+   //INTEGRAR LOS BRANCHES A MASTER
+
+   git checkout master
+   git merge fix-fecha
+   git merge feature-newstyle
+
+   //CONFLICTOS EN MERGE
+
+   git checkout -b feature-comercialtext
+   //hago cambios
+   git add index
+   git commit
+   git checkout master
+   git checkout -b fix-textosuperior
+   //hago cambios
+   git checkout master
+   git merge fix-textosuperior
+   git merge feature-commercialtext
+   //si modificas 2 lineas diferentes en diferentes branch y les haces merge va a dar conflicto
+
+   // ALIAS
+
+   git config --global alias.lodag 'log --oneline --decorate --all --graph '
+
+   git config --global alias.unstage 'reset HEAD --'
+
+   //Lista de tags creados
+   git config --global --get-regexp alias
+   //borrar un tag
+   git config --global --unset alias.lodag
+   git config --global -l // lista
+   -e 
+
+   //TAGS
+
+   git tag v0.2.0
+
+   git tag v0.2.0 f33d33d -m ¨hola¨
+
+   git tag
+
+   git tag -d v0.1.1
+
+   //tags anotados
+
+   git tag -l 
+   git tag -a v0.1.0 -m ¨version tal¨
+   git show v0.1.0
+
+   ls -a
+
+   //STASH
+
+   //guarda un cambio en el stage sin borrarlo todo si necesito cambiar de rama
+
+   //The "git stash" command can help you to (temporarily but safely) store your uncommitted local changes - and leave you with a clean working copy
+
+   git stash //guarda el directorio en el stash
+
+   git stash list // miro todos los stash existentes
+
+   git stash apply // aplico el stash a la rama actual
+
+   git stash drop // borra el stash
+
+   git stash save "He modificado el archvio de distribuidores" // cre un stash con un mensaje
+
+   git stash save --keep-index // guarda todo menos lo que esta en el stage
+
+   git stash save --include-untracked // incluye todos los archivos menos a los que git no les da seguimiento
+
+   git stash show stash@\{0\} // obtengo informacion del stash especificado
+
+   git stash pop // aplica el stash a la rama y borra el stash automaticamente
+
+   git stash branch <branchname> [<stash>] //agarra el stash y lo convierte en una rama nueva 
+
+   git stash list --stat // muestra los stash con mas informacion
+
+   git stash clear // borra todo
+
+   //REMOTOS
+
+   git remote // nos permite sincronizar computadores de forma remota donde le podamos enviar informacion codigo entre otros, interactuar con ellos
+
+   git push // enviar codigo a ese remoto 
+
+   git pull // recibir codigo de ese remoto
+
+   un remoto es un repositorio de alguien
+
+   //sincronizar el repositorio de github con mi repositorio local de git
+
+   git remote add origin <https://link.git>
+
+   git remote -v // mas informacion
+
+   git push origin master // envia la rama al repositorio
+
+   git push -f origin master // forzar push
+
+   git push -u origin master //  set upstream for git pull/status
+
+   git push --tags // sube todos los tags a github
+
+   git pull //Se utiliza para actualizar tu repositorio local(git) de todos los commits o modificaciones hechas de forma remota en el mismo github
+
+
+
+   git clone https://github.com/jeanoxdark/Guia-definitiva-de-Javascript.git // clona el repositorio remoto de github
+
+
+
+
+   git fetch // sirve para preguntarle al remoto si tiene novedades y guardarlas en un branch oculto llamada origin/master y luego hacer el merge para unirlo al master
+
+   git pull --rebase origin master // organiza los commits y los pone por orden
+
+
+
+
+
+   //rebase////////////
+
+   git chk -b feature-c
+   touch cambioa 
+   git add . && git commit -m "aplica cambio a"
+   touch cambiob
+   git add . && git commit -m "aplica cambio b"
+   git checkout master
+   touch cambio c
+   git add . && git commit -m "aplica cambio c"
+   git checkout feature-c
+   touch cambio D
+   git add . && git commit -m "aplica cambio D"
+   git rebase master
+
+   //rebase interactivo
+
+   //reescribir el historial
+
+   git rebase -i HEAD~4
+
+   git rebase squash // une dos commits en la interfaz interactiva
+
+   git rebase -i HEAD1 reword // para cambiar el nombre de un commit
+
+   git rebase edit // separar un commit en dos commits
+
+   git reset HEAD^
+
+   git rebase --continue
+
+
+
+
+
+
+
+
+/////////////////////////////
+
+   Siempre en un repositorio tienes una rama oculta, que puedes ver al usar git branch -a.
+
+   Esa rama oculta es origin/master.
+
+   Tú al usar git fetch, bajas los cambios del repositorio remoto a la rama origin/master:
+
+   git fetch origin
+
+   Ahora ya tienes los cambios en origin/master, pero tendrías que pasarlos a la rama master, para eso tienes que usar:
+
+   git merge origin/master
+
+   A partir de esto tu tienes los nuevos cambios en tu rama master y listo.
+
+   Al usar git pull estas combinando git fetch+ git merge.
+
+   git pull origin master
+
+   En conclusión con git pull te estás ahorrando el usar un comando más, pero te recomiendo que si apenas estás empezando a usar git, sigas usando git fetch y git merge
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////
+   Git status -> Mirar si tienes modificaciones tuyas y si existe algún pull o push
+   Git fetch -> Por si acaso tus ramas no se han actualizado correctamente, esto NO actualiza los ficheros de las ramas, sólo el estado de esa rama
+   Git status -> Para verificar de nuevo modificaciones, pull y pushs
+   Git pull -> Ahora sí descargas las actualizaciones
+   Git add/commit/... -> Ahora guardas tus modificaciones
+   Git status -> Miras que siga sin necesitar un pull, por si las moscas
+   Git push -> Subes tus datos
+   Git status -> Compruebas que está todo correctamente
+   Y ya por manía puedes hacer un:
+
+   Git log -> Para comprobar que está correctamente comiteado lo que has pusheado
+   Para salir de Git log, pulsa "Q"
+
+
+
+   //MARKDOWN
+
+
+   # h1
+   ## h2
+   ### h3
+   #### h4
+
+   un **gran poder** requiere _una_ gran *responsabilidad*
+
+   > Ben Parker
+
+   1. item
+   2. d
+   3. d
+   * f
+   * d
+   * g
+
+   ![Batman](link)
+
+   [Ir a la imagen](link)
+
+
+
+
+
+   
+
